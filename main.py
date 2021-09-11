@@ -8,32 +8,41 @@
 # email: epandara@stevens.edu
 
 def classify_triangle(a, b, c):
-    result = "not determined"
-    #Triangle Inequality Theorem:
+    """
+    This function returns a string with the type of triangle from three  values
+    corresponding to the lengths of the three sides of the Triangle. ## from demo slide share in CANVAS##
+
+    return:
+    if Sum of any two sides of a triangle is greater than or equal to a third side of a triangle and
+        If all three sides are equal, return 'equilateral'
+        If exactly one pair of sides are equal, return 'isosceles'
+        If no pair of  sides are equal, return 'Scalene'
+        If the sum of squares any two sides equals the square of the third side, then return 'right'
+
+    otherwise return Not a triangle
+    """
+    # Triangle Inequality Theorem:
     # (Sum of any two sides of a triangle is greater than or equal to a third side of a triangle )
-    if a+b >= c and a+c >= b and b+c >= a:
+    if a + b >= c and a + c >= b and b + c >= a:
         if a == b == c:
             result = "equilateral"
         elif a == b or a == c or b == c:
             result = "isosceles"
-        elif ((a**2 + b**2) == c**2) or ((a**2 + c**2) == b**2) or ((b**2 + c**2) == a**2):
+        elif ((a ** 2 + b ** 2) == c ** 2) or ((a ** 2 + c ** 2) == b ** 2) or ((b ** 2 + c ** 2) == a ** 2):
             result = "right"
-        else: # a != b and a != c and b != c
+        else:  # a != b and a != c and b != c
             result = "scalene"
     else:
         result = "Not a triangle"
-
     return result
 
 
 if __name__ == '__main__':
-    #HW00
+    # HW00
     print('Hello world')
-    #HW01
-    print("Demo1-equilateral-classify_triangle(2,2,2)       ==>", classify_triangle(2,2,2))
-    print("Demo2-isosceles-classify_triangle(2,2,3)         ==>", classify_triangle(2,2,3))
-    print("Demo3-scalene-classify_triangle(1,2,3)           ==>", classify_triangle(1,2,3))
-    print("Demo4-right-classify_triangle(3,4,5)             ==>", classify_triangle(3,4,5))
-    print("Demo5-Not a triangle-classify_triangle(6,10,17)  ==>", classify_triangle(6,10,17))
-
-
+    # HW01
+    print("Demo1-equilateral-classify_triangle(2,2,2)       ==>", classify_triangle(2, 2, 2))
+    print("Demo2-isosceles-classify_triangle(2,2,3)         ==>", classify_triangle(2, 2, 3))
+    print("Demo3-scalene-classify_triangle(1,2,3)           ==>", classify_triangle(1, 2, 3))
+    print("Demo4-right-classify_triangle(3,4,5)             ==>", classify_triangle(3, 4, 5))
+    print("Demo5-Not a triangle-classify_triangle(6,10,17)  ==>", classify_triangle(6, 10, 17))
